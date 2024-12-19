@@ -23,8 +23,13 @@ async function buildNetlifyFunctions() {
         'class-transformer',
         'class-validator',
         'reflect-metadata',
-        'rxjs'
-      ]
+        'rxjs',
+        'express'
+      ],
+      loader: {
+        '.ts': 'ts'
+      },
+      format: 'cjs'
     });
     console.log('Build completed successfully');
   } catch (error) {
