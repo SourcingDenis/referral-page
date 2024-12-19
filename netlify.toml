@@ -1,10 +1,12 @@
 [build]
-  command = "npm run build"
+  command = "npm run build:netlify"
   publish = "dist"
   functions = "netlify/functions"
 
 [build.environment]
   NODE_VERSION = "18"
+  NEXT_WEBPACK_USEPOLLING = "1"
+  NODE_OPTIONS = "--enable-source-maps"
 
 [build.processing]
   skip_processing = false
@@ -22,6 +24,10 @@
 
 [build.processing.images]
   compress = true
+
+[functions]
+  node_bundler = "esbuild"
+  external_node_modules = ["@nestjs/microservices", "@nestjs/websockets", "@nestjs/platform-express", "class-transformer", "class-validator"]
 
 [[headers]]
   for = "/*"
