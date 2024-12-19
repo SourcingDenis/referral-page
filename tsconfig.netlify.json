@@ -3,6 +3,11 @@
   "compilerOptions": {
     "outDir": "./netlify/functions",
     "baseUrl": ".",
+    "target": "es2020",
+    "module": "commonjs",
+    "moduleResolution": "node",
+    "experimentalDecorators": true,
+    "emitDecoratorMetadata": true,
     "paths": {
       "@/*": ["src/*"]
     }

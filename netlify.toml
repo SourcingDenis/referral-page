@@ -8,6 +8,21 @@
   NEXT_WEBPACK_USEPOLLING = "1"
   NODE_OPTIONS = "--enable-source-maps"
 
+[functions]
+  node_bundler = "esbuild"
+  external_node_modules = [
+    "@nestjs/common",
+    "@nestjs/core",
+    "@nestjs/platform-express",
+    "@nestjs/microservices",
+    "@nestjs/websockets",
+    "@nestjs/platform-socket.io",
+    "class-transformer",
+    "class-validator",
+    "reflect-metadata",
+    "rxjs"
+  ]
+
 [build.processing]
   skip_processing = false
 
@@ -24,10 +39,6 @@
 
 [build.processing.images]
   compress = true
-
-[functions]
-  node_bundler = "esbuild"
-  external_node_modules = ["@nestjs/microservices", "@nestjs/websockets", "@nestjs/platform-express", "class-transformer", "class-validator"]
 
 [[headers]]
   for = "/*"
